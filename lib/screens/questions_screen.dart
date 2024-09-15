@@ -109,21 +109,28 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   // Helper method to create a stylized button
   Widget _buildOptionButton(
       BuildContext context, String answerText, VoidCallback onTap) {
-    return ElevatedButton(
-      onPressed: onTap,
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        backgroundColor: Colors.deepPurple,
-      ),
-      child: Text(
-        answerText,
-        style: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+    return Column(children: [
+      SizedBox(
+        width: double.infinity, // Makes the button full width
+        child: ElevatedButton(
+          onPressed: onTap,
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            backgroundColor: Colors.deepPurple,
+          ),
+          child: Text(
+            answerText,
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
-    );
+      const SizedBox(height: 20),
+    ]);
   }
 }

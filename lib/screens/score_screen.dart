@@ -5,8 +5,12 @@ import 'package:quizapp/screens/home_page.dart';
 class ScoreScreen extends StatelessWidget {
   final String userName;
   final int score;
-  final totalQuestions;
-  const ScoreScreen({super.key, required this.userName, required this.score,required this.totalQuestions});
+  final int totalQuestions;
+  const ScoreScreen(
+      {super.key,
+      required this.userName,
+      required this.score,
+      required this.totalQuestions});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class ScoreScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              '$score / 15', // Use the score parameter here
+              '$score / $totalQuestions', // Use the score parameter here
               style: const TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
